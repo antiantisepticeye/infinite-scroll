@@ -10,6 +10,7 @@ let firstObserver;
 let lastObserver;
 let sectionList = [];
 let container = document.getElementById('container');
+let scrolled = false;
 
 function copy(str) {
 
@@ -143,22 +144,23 @@ function addSection(isFirst=false) {
 	})
 	lastObserver.observe(lastSection)
 
-	
-
 	firstObserver = new IntersectionObserver((entries, observer) => {
 		
 		entries.forEach(entry => {
-			if(entry.isIntersecting) {
-				addSection(true)
-				observer.disconnect()
-				// console.log('up');
-			}
+				if(entry.isIntersecting) {
+					if(scrolled) addSection(true)
+					observer.disconnect()
+					// console.log('up');
+				}
 		})
 	
 	})
 	firstObserver.observe(firstSection)
 
 
+
+
+	
 	return section
 }
 
@@ -166,6 +168,15 @@ function addSection(isFirst=false) {
 document.addEventListener('DOMContentLoaded', () => {
 	addSection()
 	addSection()
+	addSection()
+	addSection()
+	addSection()
+	
+})
+container.addEventListener('scroll', function e() {
+	scrolled = true
+	console.log('scrolled')
+	container.removeEventListener('scroll', e)
 })
 
 
