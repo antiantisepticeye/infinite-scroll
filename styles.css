@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* scroll-snap-type: y mandatory; */
+    /* scroll-snap-stop: always; */
+}
+
+section {
+    /* scroll-snap-align: start; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 3em;
+    height: 100%;
+    width: 100%;
+}
+
+.info-btn {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    
+    display: inline;
+    background-color: rgba(0, 0, 0, 0.453);
+    padding: 5px;
+    color: white;
+    font-size: large;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: 3px solid rgba(0, 0, 0, 0.549);
+    border-radius: 5px;
+    cursor: pointer;
+    --selection-background: black;
+    user-select: none;
+}
+
+.info-btn::selection {
+    background-color: var(--selection-background);
+}
+
+.tippy-box {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tippy-box[data-theme~='success'] {
+    background-color: #00a000;
+    /* color: yellow; */
+}
+
+.tippy-box[data-theme~="success"] > .tippy-arrow::before {
+    border-top-color: #00a000;
+}
