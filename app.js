@@ -79,7 +79,7 @@ function addSection(isFirst=false) {
 	infoBtn.addEventListener('mousedown', (e) => {
 		// t.setContent('copied!')
 		
-		// copy(col.toHex())
+		copy(col.toHex())
 		t.setProps({
 			content: 'copied!',
 			theme:'success',
