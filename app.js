@@ -171,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	addSection()
 	addSection()
 	addSection()
+	addSection()
+	addSection()
 	
 })
 container.addEventListener('scroll', function e() {
